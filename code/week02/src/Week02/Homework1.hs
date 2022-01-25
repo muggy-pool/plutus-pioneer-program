@@ -32,7 +32,7 @@ import           Text.Printf          (printf)
 {-# INLINABLE mkValidator #-}
 -- This should validate if and only if the two Booleans in the redeemer are equal!
 mkValidator :: () -> (Bool, Bool) -> ScriptContext -> Bool
-mkValidator _ (r1, r2) _ = traceIfFalse "wrong redeemer" $ r1 /= r2 -- FIXED?
+mkValidator _ (r1, r2) _ = traceIfFalse "wrong redeemer" $ r1 == r2 -- FIXED?
 
 data Typed
 instance Scripts.ValidatorTypes Typed where
