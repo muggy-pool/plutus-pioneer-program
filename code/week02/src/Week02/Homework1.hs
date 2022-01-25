@@ -37,8 +37,8 @@ mkValidator _ (r1, r2) _ = traceIfFalse "wrong redeemer" $ r1 == r2 -- FIXED?
 data Typed
 instance Scripts.ValidatorTypes Typed where
 -- Implement the instance?
-    typed instance DatumType Typed = ()
-    typed instance Redeemer Typed = (Bool, Bool)
+    type instance DatumType Typed = ()
+    type instance RedeemerType Typed = (Bool, Bool)
 
 typedValidator :: Scripts.TypedValidator Typed
 --typedValidator = undefined -- FIX ME!
